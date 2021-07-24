@@ -1,0 +1,71 @@
+.bubble {
+  display: flex;
+  column-gap: 10px;
+
+  &:nth-child(even){
+    justify-content: flex-end;
+    .avatar{
+      order: 2;
+    }
+    .message{
+      border-radius: 15px;
+      border-bottom-right-radius: unset;
+      &:after{
+        left: 100%;
+        transform: scaleX(-1);
+      }
+    }
+  }
+
+  .avatar {
+    align-self: flex-end;
+    .image{
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 50%;
+    }
+  }
+
+  .message {
+    //flex: 1 0 0;
+    min-width: 150px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 15px;
+    background-color: darkslategray;
+    border-radius: 15px;
+    border-bottom-left-radius: unset;
+    position: relative;
+    align-self: flex-end;
+
+    &:after {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 0;
+      z-index: 1;
+      border-style: solid;
+      border-width: 0 0 8px 10px;
+      border-color: transparent transparent darkslategray transparent;
+      left: 0;
+      bottom: 0;
+      transform: translateX(-100%);
+    }
+
+    .name {
+      color: mediumpurple;
+    }
+
+    .text {
+      //flex: 1 0 0;
+      color: antiquewhite;
+    }
+
+    .time {
+      color: darkgrey;
+      align-self: flex-end;
+    }
+  }
+}
